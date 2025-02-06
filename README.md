@@ -1,2 +1,2 @@
 # TBMI26
-Labbserie för TBMI26
+Labs for TBMI26
