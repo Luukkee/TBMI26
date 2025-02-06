@@ -1,0 +1,13 @@
+Since you want more discussion about the result, we will resolve the problems here:
+
+Question 5: Compare this model with the previous fully connected model. You should find that this one is much more efficient, i.e. achieves higher accuracy with fewer parameters. Explain in your own words how this is possible
+
+
+
+By adding more convolutional layers, the model can learn hierarchical features at different levels of abstraction. This helps capture more complex patterns in the images. After the convolutional layers, dense layers with varying neuron counts are introduced to capture global patterns in the features extracted by convolutional layers. About 67% accuracy now compared to the previous 48%. The reason why convolutional layers are so efficient is because it uses few parameters compared to the fully connected layer, which in contrast would require connections between every pixel. Meaning it is better to use kernels to find features within the picture instead of a fully connected layer that scans the whole picture. Convolutional layers can learn more complex patterns aswell. The sharing of weights also significantly reduces the number of parameters needed.
+
+Question 6: Compare this model and the previous in terms of the training accuracy, validation accuracy, and test accuracy. Explain the similarities and differences (remember that the only difference between the models should be the addition of Dropout layers). Hint: what does the dropout layer do at test time?
+
+
+
+training accuracy: 0.7038 vs 0.7970 validation accuracy: 0.6729 vs 0.6730 test accuracy: 0.673 vs 0.673 Validation improvements seems to correlate more with training data improvement which indicates that overfitting has been reduced. The actual test accuracy was not improved. The training accuracy was ≈ 10% worse. Introducing dropout reduces overfitting because the neural network relies less on single important nodes and instead creates enhanced synergy in the NN. Validation and test accuracy does not change because it still reaches its potential, while the overfitting reduces the accuracy for training data.
